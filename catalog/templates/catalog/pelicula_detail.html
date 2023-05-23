@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Titulo: {{ pelicula.titulo }}</h1>
+  <p><strong>Director:</strong> <a href="{{ pelicula.director.get_absolute_url }}">{{ pelicula.director }}</a></p>
+  <p><strong>Sipnosis:</strong> {{ pelicula.sipnosis }}</p>
+  <p><strong>Estrenada en:</strong> {{ pelicula.fecha_de_estreno }}</p>
+  <p><strong>Generos:</strong> {{ pelicula.genero.all|join:", " }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Portada:</h4>
+    <img src="{{ pelicula.portada.url }}" style="width: 800px;"/>
+  </div>
+{% endblock %}

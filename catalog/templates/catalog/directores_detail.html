@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Director:</h1>
+  <p><strong>Nombre: </strong> {{ directores.nombre }}</p>
+  <p><strong>Apellido: </strong> {{ directores.apellido }} </p>
+  <p><strong>Nacido en:</strong> {{ directores.fecha_de_nacimiento }}</p>
+  {% if directores.peliculas.all %}
+  <p><strong>Películas:</strong>
+  {% for pelicula in directores.peliculas.all %}
+    <a href="{{ pelicula.get_absolute_url }}">{{ pelicula.titulo }}</a>{% if not forloop.last %}, {% endif %}
+  {% endfor %}
+</p>
+{% endif %}
+{% endblock %}

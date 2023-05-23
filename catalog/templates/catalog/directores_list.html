@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Directores</h1>
+  {% if directores_list %}
+    <ul>
+      {% for directores in directores_list %}
+      <li>
+        <a href="{{ directores.get_absolute_url }}">{{ directores.nombre }} {{ directores.apellido}} </a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay películas en la lista.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Peliculas</h1>
+  <p>
+    Bienvenido a tu pagina de tendencias del cine!
+  </p>
+  <h2>Catalogo</h2>
+  <p>Nuestro numero de peliculas en el catalogo:</p>
+  <ul>
+    <li><strong>Peliculas:</strong> {{ peliculas }}</li>
+    <li><strong>Directores:</strong> {{ directores }}</li>
+  </ul>
+{% endblock %}
